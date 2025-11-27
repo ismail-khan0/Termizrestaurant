@@ -1,0 +1,744 @@
+{
+  "tables": [
+    {
+      "_id": "3",
+      "number": 3,
+      "capacity": 2,
+      "status": "occupied",
+      "location": "terrace",
+      "currentOrder": "1763989543583",
+      "customerName": "Table 3 Customer",
+      "customerInitials": ""
+    },
+    {
+      "_id": "4",
+      "number": 4,
+      "capacity": 4,
+      "status": "occupied",
+      "location": "main-hall",
+      "currentOrder": "1764051693478",
+      "customerName": "Table 4 Customer"
+    },
+    {
+      "_id": "5",
+      "number": 5,
+      "capacity": 3,
+      "status": "occupied",
+      "location": "terrace",
+      "currentOrder": "1764103339183",
+      "customerName": "Table 5 Customer"
+    },
+    {
+      "_id": "6",
+      "number": 6,
+      "capacity": 4,
+      "status": "available",
+      "location": "main-hall",
+      "currentOrder": null
+    },
+    {
+      "_id": "7",
+      "number": 7,
+      "capacity": 8,
+      "status": "available",
+      "location": "private-room",
+      "currentOrder": null
+    },
+    {
+      "_id": "8",
+      "number": 8,
+      "capacity": 4,
+      "status": "available",
+      "location": "terrace",
+      "currentOrder": null
+    },
+    {
+      "_id": "1763985720026",
+      "number": 9,
+      "capacity": 4,
+      "location": "main-hall",
+      "status": "available",
+      "currentOrder": null
+    }
+  ],
+  "menuItems": [
+    {
+      "_id": "1",
+      "title": "Chicken Biryani",
+      "price": 450,
+      "category": "1",
+      "description": "Traditional Pakistani rice dish with chicken and spices",
+      "preparationTime": 25,
+      "isAvailable": true,
+      "ingredients": [
+        "Basmati Rice",
+        "Chicken",
+        "Spices",
+        "Yogurt",
+        "Onions"
+      ],
+      "spicyLevel": "medium",
+      "image": "/images/chicken-biryani.jpg"
+    },
+    {
+      "_id": "2",
+      "title": "Seekh Kebab",
+      "price": 320,
+      "category": "1",
+      "description": "Minced meat kebabs with traditional spices",
+      "preparationTime": 20,
+      "isAvailable": true,
+      "ingredients": [
+        "Minced Meat",
+        "Spices",
+        "Herbs",
+        "Onions"
+      ],
+      "spicyLevel": "medium",
+      "image": "/images/seekh-kebab.jpg"
+    },
+    {
+      "_id": "1763983739270",
+      "title": "dsjhdasj",
+      "price": 2372,
+      "category": "1",
+      "description": "",
+      "preparationTime": 15,
+      "ingredients": [],
+      "spicyLevel": "medium",
+      "isAvailable": true,
+      "supportsSizes": false,
+      "createdAt": "2025-11-24T11:28:59.270Z",
+      "updatedAt": "2025-11-24T11:28:59.271Z"
+    },
+    {
+      "_id": "1763983783855",
+      "title": "khan",
+      "price": 2387,
+      "category": "2",
+      "description": "",
+      "preparationTime": 15,
+      "ingredients": [],
+      "spicyLevel": "high",
+      "isAvailable": true,
+      "supportsSizes": false,
+      "createdAt": "2025-11-24T11:29:43.855Z",
+      "updatedAt": "2025-11-24T11:29:43.855Z"
+    },
+    {
+      "_id": "1763984098164",
+      "title": "apple",
+      "price": 100,
+      "category": "1",
+      "description": "",
+      "preparationTime": 15,
+      "ingredients": [],
+      "spicyLevel": "mild",
+      "isAvailable": true,
+      "supportsSizes": true,
+      "sizePrices": {
+        "small": 50,
+        "medium": 100,
+        "large": 150
+      },
+      "createdAt": "2025-11-24T11:34:58.165Z",
+      "updatedAt": "2025-11-24T11:34:58.165Z"
+    },
+    {
+      "_id": "1763984711683",
+      "title": "manngoo",
+      "price": 0,
+      "category": "4",
+      "description": "",
+      "preparationTime": 15,
+      "ingredients": [],
+      "spicyLevel": "medium",
+      "isAvailable": true,
+      "supportsSizes": true,
+      "sizePrices": {
+        "small": 200,
+        "medium": 0,
+        "large": 500
+      },
+      "createdAt": "2025-11-24T11:45:11.683Z",
+      "updatedAt": "2025-11-24T11:45:11.684Z"
+    }
+  ],
+  "categories": [
+    {
+      "_id": "1",
+      "name": "Starters",
+      "color": "bg-red-500",
+      "description": "Appetizers and small bites"
+    },
+    {
+      "_id": "2",
+      "name": "Main Course",
+      "color": "bg-purple-500",
+      "description": "Main dishes and entrees"
+    },
+    {
+      "_id": "3",
+      "name": "Beverages",
+      "color": "bg-blue-500",
+      "description": "Drinks and refreshments"
+    },
+    {
+      "_id": "4",
+      "name": "Desserts",
+      "color": "bg-pink-500",
+      "description": "Sweet treats and desserts"
+    }
+  ],
+  "orders": [
+    {
+      "_id": "1763991265931",
+      "orderNumber": "ORD20251124008",
+      "tableNumber": 1,
+      "customerName": "Table 1 Customer",
+      "type": "dine-in",
+      "waiterName": "ismail",
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1763984711683",
+          "title": "manngoo",
+          "price": 0,
+          "category": {
+            "_id": "4",
+            "name": "Desserts",
+            "color": "bg-pink-500",
+            "description": "Sweet treats and desserts"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 200,
+            "medium": 0,
+            "large": 500
+          },
+          "createdAt": "2025-11-24T11:45:11.683Z",
+          "updatedAt": "2025-11-24T11:45:11.684Z",
+          "originalPrice": 0,
+          "quantity": 2,
+          "total": 0,
+          "size": "medium",
+          "sizeLabel": "Medium",
+          "specialInstructions": ""
+        },
+        {
+          "_id": "1763984098164",
+          "title": "apple",
+          "price": 100,
+          "category": {
+            "_id": "1",
+            "name": "Starters",
+            "color": "bg-red-500",
+            "description": "Appetizers and small bites"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "mild",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 50,
+            "medium": 100,
+            "large": 150
+          },
+          "createdAt": "2025-11-24T11:34:58.165Z",
+          "updatedAt": "2025-11-24T11:34:58.165Z",
+          "originalPrice": 100,
+          "quantity": 1,
+          "total": 100,
+          "size": "medium",
+          "sizeLabel": "Medium",
+          "specialInstructions": ""
+        },
+        {
+          "_id": "2",
+          "title": "Seekh Kebab",
+          "price": 320,
+          "category": {
+            "_id": "1",
+            "name": "Starters",
+            "color": "bg-red-500",
+            "description": "Appetizers and small bites"
+          },
+          "description": "Minced meat kebabs with traditional spices",
+          "preparationTime": 20,
+          "isAvailable": true,
+          "ingredients": [
+            "Minced Meat",
+            "Spices",
+            "Herbs",
+            "Onions"
+          ],
+          "spicyLevel": "medium",
+          "image": "/images/seekh-kebab.jpg",
+          "quantity": 1,
+          "total": 320
+        },
+        {
+          "_id": "1763983739270",
+          "title": "dsjhdasj",
+          "price": 2372,
+          "category": {
+            "_id": "1",
+            "name": "Starters",
+            "color": "bg-red-500",
+            "description": "Appetizers and small bites"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": false,
+          "createdAt": "2025-11-24T11:28:59.270Z",
+          "updatedAt": "2025-11-24T11:28:59.271Z",
+          "quantity": 1,
+          "total": 2372
+        },
+        {
+          "_id": "1763983783855",
+          "title": "khan",
+          "price": 2387,
+          "category": {
+            "_id": "2",
+            "name": "Main Course",
+            "color": "bg-purple-500",
+            "description": "Main dishes and entrees"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "high",
+          "isAvailable": true,
+          "supportsSizes": false,
+          "createdAt": "2025-11-24T11:29:43.855Z",
+          "updatedAt": "2025-11-24T11:29:43.855Z",
+          "quantity": 1,
+          "total": 2387
+        }
+      ],
+      "subtotal": 5179,
+      "discount": 0,
+      "tax": 0,
+      "total": 5179,
+      "status": "pending",
+      "paymentStatus": "pending",
+      "paymentMethod": "pending",
+      "notes": "",
+      "createdAt": "2025-11-24T13:34:25.994Z",
+      "updatedAt": "2025-11-24T13:34:25.994Z"
+    },
+    {
+      "_id": "1763989644245",
+      "orderNumber": "ORD20251124006",
+      "tableNumber": 1,
+      "customerName": "Table 1 Customer",
+      "type": "dine-in",
+      "waiterName": "ismail khan",
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1763984711683",
+          "title": "manngoo",
+          "price": 0,
+          "category": {
+            "_id": "4",
+            "name": "Desserts",
+            "color": "bg-pink-500",
+            "description": "Sweet treats and desserts"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 200,
+            "medium": 0,
+            "large": 500
+          },
+          "createdAt": "2025-11-24T11:45:11.683Z",
+          "updatedAt": "2025-11-24T11:45:11.684Z",
+          "originalPrice": 0,
+          "quantity": 1,
+          "total": 0,
+          "size": "medium",
+          "sizeLabel": "Medium",
+          "specialInstructions": ""
+        }
+      ],
+      "subtotal": 0,
+      "discount": 0,
+      "tax": 0,
+      "total": 0,
+      "status": "completed",
+      "paymentStatus": "paid",
+      "paymentMethod": "cash",
+      "notes": "",
+      "createdAt": "2025-11-24T13:07:24.250Z",
+      "updatedAt": "2025-11-24T13:07:24.300Z",
+      "amountPaid": 0,
+      "paidAt": "2025-11-24T13:07:24.300Z"
+    },
+    {
+      "_id": "1763989543583",
+      "orderNumber": "ORD20251124005",
+      "tableNumber": 3,
+      "customerName": "Table 3 Customer",
+      "type": "dine-in",
+      "waiterName": "ismail khan",
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1763984711683",
+          "title": "manngoo",
+          "price": 500,
+          "category": {
+            "_id": "4",
+            "name": "Desserts",
+            "color": "bg-pink-500",
+            "description": "Sweet treats and desserts"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 200,
+            "medium": 0,
+            "large": 500
+          },
+          "createdAt": "2025-11-24T11:45:11.683Z",
+          "updatedAt": "2025-11-24T11:45:11.684Z",
+          "originalPrice": 0,
+          "quantity": 1,
+          "total": 500,
+          "size": "large",
+          "sizeLabel": "Large",
+          "specialInstructions": ""
+        }
+      ],
+      "subtotal": 500,
+      "discount": 0,
+      "tax": 0,
+      "total": 500,
+      "status": "pending",
+      "paymentStatus": "pending",
+      "paymentMethod": "pending",
+      "notes": "",
+      "createdAt": "2025-11-24T13:05:43.594Z",
+      "updatedAt": "2025-11-24T13:05:43.594Z"
+    },
+    {
+      "_id": "1763989253491",
+      "orderNumber": "ORD20251124004",
+      "tableNumber": 3,
+      "customerName": "Table 3 Customer",
+      "type": "dine-in",
+      "waiterName": null,
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1763984711683",
+          "title": "manngoo",
+          "price": 0,
+          "category": {
+            "_id": "4",
+            "name": "Desserts",
+            "color": "bg-pink-500",
+            "description": "Sweet treats and desserts"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 200,
+            "medium": 0,
+            "large": 500
+          },
+          "createdAt": "2025-11-24T11:45:11.683Z",
+          "updatedAt": "2025-11-24T11:45:11.684Z",
+          "originalPrice": 0,
+          "quantity": 1,
+          "total": 0,
+          "size": "medium",
+          "sizeLabel": "Medium",
+          "specialInstructions": ""
+        }
+      ],
+      "subtotal": 0,
+      "discount": 0,
+      "tax": 0,
+      "total": 0,
+      "status": "completed",
+      "paymentStatus": "paid",
+      "paymentMethod": "cash",
+      "notes": "",
+      "createdAt": "2025-11-24T13:00:53.502Z",
+      "updatedAt": "2025-11-24T13:00:53.546Z",
+      "amountPaid": 0,
+      "paidAt": "2025-11-24T13:00:53.546Z"
+    },
+    {
+      "_id": "1763983229370",
+      "orderNumber": "ORD20251124003",
+      "tableNumber": 2,
+      "customerName": "Table 2 Customer",
+      "type": "dine-in",
+      "waiterName": null,
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "2",
+          "title": "Seekh Kebab",
+          "price": 320,
+          "category": {
+            "_id": "1",
+            "name": "Starters",
+            "color": "bg-red-500",
+            "description": "Appetizers and small bites"
+          },
+          "description": "Minced meat kebabs with traditional spices",
+          "preparationTime": 20,
+          "isAvailable": true,
+          "ingredients": [
+            "Minced Meat",
+            "Spices",
+            "Herbs",
+            "Onions"
+          ],
+          "spicyLevel": "medium",
+          "image": "/images/seekh-kebab.jpg",
+          "originalPrice": 320,
+          "quantity": 2,
+          "total": 640,
+          "size": "medium",
+          "sizeLabel": "Medium",
+          "specialInstructions": ""
+        },
+        {
+          "_id": "1",
+          "title": "Chicken Biryani",
+          "price": 450,
+          "category": {
+            "_id": "1",
+            "name": "Starters",
+            "color": "bg-red-500",
+            "description": "Appetizers and small bites"
+          },
+          "description": "Traditional Pakistani rice dish with chicken and spices",
+          "preparationTime": 25,
+          "isAvailable": true,
+          "ingredients": [
+            "Basmati Rice",
+            "Chicken",
+            "Spices",
+            "Yogurt",
+            "Onions"
+          ],
+          "spicyLevel": "medium",
+          "image": "/images/chicken-biryani.jpg",
+          "quantity": 1,
+          "total": 450
+        }
+      ],
+      "subtotal": 1090,
+      "discount": 0,
+      "tax": 57.225,
+      "total": 1147.225,
+      "status": "cancelled",
+      "paymentStatus": "pending",
+      "paymentMethod": "pending",
+      "notes": "",
+      "createdAt": "2025-11-24T11:20:29.375Z",
+      "updatedAt": "2025-11-24T12:12:29.844Z"
+    },
+    {
+      "_id": "1763980827840",
+      "orderNumber": "ORD20251124001",
+      "tableNumber": 1,
+      "customerName": "Table 1 Customer",
+      "type": "dine-in",
+      "waiterName": null,
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1",
+          "title": "Chicken Biryani",
+          "price": 450,
+          "category": {
+            "_id": "1",
+            "name": "Starters",
+            "color": "bg-red-500",
+            "description": "Appetizers and small bites"
+          },
+          "description": "Traditional Pakistani rice dish with chicken and spices",
+          "preparationTime": 25,
+          "isAvailable": true,
+          "ingredients": [
+            "Basmati Rice",
+            "Chicken",
+            "Spices",
+            "Yogurt",
+            "Onions"
+          ],
+          "spicyLevel": "medium",
+          "image": "/images/chicken-biryani.jpg",
+          "originalPrice": 450,
+          "quantity": 1,
+          "total": 450,
+          "size": "medium",
+          "sizeLabel": "Medium",
+          "specialInstructions": ""
+        }
+      ],
+      "subtotal": 450,
+      "discount": 0,
+      "tax": 23.625,
+      "total": 473.625,
+      "status": "cancelled",
+      "paymentStatus": "pending",
+      "paymentMethod": "pending",
+      "notes": "",
+      "createdAt": "2025-11-24T10:40:27.843Z",
+      "updatedAt": "2025-11-24T12:13:03.723Z"
+    },
+    {
+      "_id": "1764051693478",
+      "orderNumber": "ORD20251125009",
+      "tableNumber": 4,
+      "customerName": "Table 4 Customer",
+      "type": "dine-in",
+      "waiterName": "ismail khan",
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1763984711683",
+          "title": "manngoo",
+          "price": 500,
+          "category": {
+            "_id": "4",
+            "name": "Desserts",
+            "color": "bg-pink-500",
+            "description": "Sweet treats and desserts"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 200,
+            "medium": 0,
+            "large": 500
+          },
+          "createdAt": "2025-11-24T11:45:11.683Z",
+          "updatedAt": "2025-11-24T11:45:11.684Z",
+          "originalPrice": 0,
+          "quantity": 1,
+          "total": 500,
+          "size": "large",
+          "sizeLabel": "Large",
+          "specialInstructions": ""
+        }
+      ],
+      "subtotal": 500,
+      "discount": 0,
+      "tax": 0,
+      "total": 500,
+      "status": "pending",
+      "paymentStatus": "pending",
+      "paymentMethod": "pending",
+      "notes": "",
+      "createdAt": "2025-11-25T06:21:33.484Z",
+      "updatedAt": "2025-11-25T06:21:33.484Z"
+    },
+    {
+      "_id": "1764103339183",
+      "orderNumber": "ORD20251125010",
+      "tableNumber": 5,
+      "customerName": "Table 5 Customer",
+      "type": "dine-in",
+      "waiterName": null,
+      "deliveryAddress": null,
+      "deliveryCharges": 0,
+      "items": [
+        {
+          "_id": "1763984711683",
+          "title": "manngoo",
+          "price": 500,
+          "category": {
+            "_id": "4",
+            "name": "Desserts",
+            "color": "bg-pink-500",
+            "description": "Sweet treats and desserts"
+          },
+          "description": "",
+          "preparationTime": 15,
+          "ingredients": [],
+          "spicyLevel": "medium",
+          "isAvailable": true,
+          "supportsSizes": true,
+          "sizePrices": {
+            "small": 200,
+            "medium": 0,
+            "large": 500
+          },
+          "createdAt": "2025-11-24T11:45:11.683Z",
+          "updatedAt": "2025-11-24T11:45:11.684Z",
+          "originalPrice": 0,
+          "quantity": 1,
+          "total": 500,
+          "size": "large",
+          "sizeLabel": "Large",
+          "specialInstructions": ""
+        }
+      ],
+      "subtotal": 500,
+      "discount": 0,
+      "tax": 0,
+      "total": 500,
+      "status": "pending",
+      "paymentStatus": "pending",
+      "paymentMethod": "pending",
+      "notes": "",
+      "createdAt": "2025-11-25T20:42:19.188Z",
+      "updatedAt": "2025-11-25T20:42:19.188Z"
+    }
+  ],
+  "settings": {
+    "restaurantName": "Termiz restaurent",
+    "taxRate": 0,
+    "currency": "PKR",
+    "address": "123 Food Street, Karachi, Pakistan",
+    "phone": "+92 300 1234567",
+    "gstin": "PK-123456789",
+    "email": "info@termizrestaurant.com",
+    "website": "www.termiz.com"
+  },
+  "orderCounter": 11
+}
