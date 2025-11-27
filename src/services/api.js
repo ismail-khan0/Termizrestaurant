@@ -1,6 +1,4 @@
-// src/services/api.js
-
-// Simple localStorage-based database for Electron
+// Simple localStorage-based database for Electron/Offline use
 class LocalDatabase {
   constructor() {
     this.storageKey = 'termizrestaurant_data_v4';
@@ -69,62 +67,26 @@ class LocalDatabase {
         },
         { 
           _id: '4', 
-          title: 'Mutton Karahi', 
-          price: 850, 
-          category: '2',
-          description: 'Traditional Pakistani wok-cooked mutton curry',
-          preparationTime: 35,
+          title: 'Pepsi', 
+          price: 80, 
+          category: '3',
+          description: 'Cold refreshing beverage',
+          preparationTime: 2,
           isAvailable: true,
-          ingredients: ['Mutton', 'Tomatoes', 'Ginger', 'Garlic'],
-          spicyLevel: 'high',
+          ingredients: ['Carbonated Water', 'Sugar'],
+          spicyLevel: 'mild',
           image: null
         },
         { 
           _id: '5', 
-          title: 'Fresh Lime', 
-          price: 80, 
-          category: '3',
-          description: 'Fresh lime soda with mint',
-          preparationTime: 5,
-          isAvailable: true,
-          ingredients: ['Lime', 'Soda', 'Mint', 'Sugar'],
-          spicyLevel: 'none',
-          image: null
-        },
-        { 
-          _id: '6', 
-          title: 'Chicken Tikka', 
-          price: 550, 
-          category: '1',
-          description: 'Grilled chicken pieces with spices',
-          preparationTime: 25,
-          isAvailable: true,
-          ingredients: ['Chicken', 'Yogurt', 'Spices'],
-          spicyLevel: 'medium',
-          image: null
-        },
-        { 
-          _id: '7', 
-          title: 'Fish Curry', 
-          price: 750, 
-          category: '2',
-          description: 'Spicy fish curry with traditional spices',
-          preparationTime: 20,
-          isAvailable: true,
-          ingredients: ['Fish', 'Spices', 'Coconut Milk'],
-          spicyLevel: 'medium',
-          image: null
-        },
-        { 
-          _id: '8', 
           title: 'Gulab Jamun', 
           price: 120, 
           category: '4',
-          description: 'Sweet milk balls in sugar syrup',
+          description: 'Sweet milk-solid balls in sugar syrup',
           preparationTime: 10,
           isAvailable: true,
-          ingredients: ['Milk', 'Sugar', 'Flour'],
-          spicyLevel: 'none',
+          ingredients: ['Milk Solids', 'Flour', 'Sugar Syrup'],
+          spicyLevel: 'mild',
           image: null
         }
       ],
@@ -598,50 +560,6 @@ export const api = {
     }
   },
 
-  updateOrder: (orderId, orderData) => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      const orderIndex = data.orders.findIndex(order => order._id === orderId);
-      if (orderIndex !== -1) {
-        // Recalculate totals if items changed
-        if (orderData.items) {
-          const subtotal = orderData.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-          const taxRate = (data.settings && data.settings.taxRate) || 5.25;
-          const tax = subtotal * (taxRate / 100);
-          const total = subtotal + tax;
-          
-          orderData.subtotal = subtotal;
-          orderData.tax = tax;
-          orderData.total = total;
-        }
-
-        data.orders[orderIndex] = { 
-          ...data.orders[orderIndex], 
-          ...orderData,
-          updatedAt: new Date().toISOString()
-        };
-        localDb.saveData(data);
-        return mockApiCall(data.orders[orderIndex]);
-      }
-      return mockApiCall(null);
-    } catch (error) {
-      console.error('Error in updateOrder:', error);
-      return mockApiCall(null);
-    }
-  },
-
-  deleteOrder: (orderId) => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      data.orders = data.orders.filter(order => order._id !== orderId);
-      localDb.saveData(data);
-      return mockApiCall({ success: true });
-    } catch (error) {
-      console.error('Error in deleteOrder:', error);
-      return mockApiCall({ success: false });
-    }
-  },
-
   // Settings
   getSettings: () => {
     try {
@@ -669,91 +587,6 @@ export const api = {
     } catch (error) {
       console.error('Error in updateSettings:', error);
       return mockApiCall(null);
-    }
-  },
-
-  // Search
-  searchOrders: (query) => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      const searchTerm = query.toLowerCase();
-      const filteredOrders = data.orders.filter(order => 
-        order.customerName?.toLowerCase().includes(searchTerm) ||
-        order.orderNumber?.toLowerCase().includes(searchTerm) ||
-        order.tableNumber?.toString().includes(searchTerm)
-      );
-      return mockApiCall(filteredOrders);
-    } catch (error) {
-      console.error('Error in searchOrders:', error);
-      return mockApiCall([]);
-    }
-  },
-
-  searchMenuItems: (query) => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      const searchTerm = query.toLowerCase();
-      const filteredItems = data.menuItems.filter(item => 
-        item.title?.toLowerCase().includes(searchTerm) ||
-        item.description?.toLowerCase().includes(searchTerm) ||
-        (item.category && data.categories.find(cat => 
-          cat._id === item.category && cat.name.toLowerCase().includes(searchTerm)
-        ))
-      );
-      return mockApiCall(filteredItems);
-    } catch (error) {
-      console.error('Error in searchMenuItems:', error);
-      return mockApiCall([]);
-    }
-  },
-
-  // Additional utility methods
-  getRecentOrders: (limit = 10) => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      const recentOrders = data.orders
-        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-        .slice(0, limit);
-      return mockApiCall(recentOrders);
-    } catch (error) {
-      console.error('Error in getRecentOrders:', error);
-      return mockApiCall([]);
-    }
-  },
-
-  getOrdersByDateRange: (startDate, endDate) => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      const filteredOrders = data.orders.filter(order => {
-        const orderDate = new Date(order.createdAt);
-        return orderDate >= new Date(startDate) && orderDate <= new Date(endDate);
-      });
-      return mockApiCall(filteredOrders);
-    } catch (error) {
-      console.error('Error in getOrdersByDateRange:', error);
-      return mockApiCall([]);
-    }
-  },
-
-  // Export data (for backup)
-  exportData: () => {
-    try {
-      const data = localDb.getData() || localDb.getDefaultData();
-      return mockApiCall(data);
-    } catch (error) {
-      console.error('Error in exportData:', error);
-      return mockApiCall(null);
-    }
-  },
-
-  // Import data (for restore)
-  importData: (importedData) => {
-    try {
-      localDb.saveData(importedData);
-      return mockApiCall({ success: true });
-    } catch (error) {
-      console.error('Error in importData:', error);
-      return mockApiCall({ success: false });
     }
   },
 
