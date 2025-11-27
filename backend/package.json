@@ -1,7 +1,7 @@
-{
-  "name": "temiz-restaurant-backend",
+﻿{
+  "name": "termizrest-backend",
   "version": "1.0.0",
-  "description": "Backend for Termiz Restaurant POS System",
+  "description": "Backend for TermizRest restaurant management system",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -15,7 +15,7 @@
     "dotenv": "^16.3.1",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
-    "express-validator": "^7.0.1"
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
