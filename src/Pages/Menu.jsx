@@ -93,7 +93,7 @@ const Menu = () => {
   if (loading) {
     return (
       <div className="bg-black min-h-screen text-white p-4 pb-32">
-        <Header title="Termiz Restaurant" />
+        <Header title="Restaurant" />
         <div className="flex justify-center items-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto"></div>
@@ -106,7 +106,7 @@ const Menu = () => {
 
   return (
     <div className="bg-black min-h-screen text-white flex flex-col pb-32">
-      <Header title="Termiz Restaurant" />
+      <Header title="Restaurant" />
 
       <div className="flex flex-1">
         {/* ------- MAIN CONTENT ------- */}

@@ -107,7 +107,7 @@ const loadData = () => {
     ],
     orders: [],
     settings: {
-      restaurantName: 'Termiz Restaurant',
+      restaurantName: 'Restaurant',
       taxRate: 5.25,
       currency: 'PKR',
       address: '123 Food Street, Karachi, Pakistan',
@@ -143,7 +143,7 @@ const generateOrderNumber = () => {
 // Routes
 app.get('/', (req, res) => {
   res.json({ 
-    message: '✅ Termiz Restaurant POS Backend - READY FOR SERVICE!',
+    message: '✅ Restaurant POS Backend - READY FOR SERVICE!',
     status: 'success',
     timestamp: new Date().toISOString(),
     location: 'Karachi, Pakistan'
@@ -793,7 +793,7 @@ app.post('/api/admin/reset-all-data', (req, res) => {
       ],
       orders: [],
       settings: {
-        restaurantName: 'Termiz Restaurant',
+        restaurantName: 'Restaurant',
         taxRate: 5.25,
         currency: 'PKR',
         address: '123 Food Street, Karachi, Pakistan',
@@ -835,7 +835,7 @@ app.post('/api/admin/reset-all-data', (req, res) => {
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log('🍽️  ==========================================');
-  console.log('✅ Termiz Restaurant POS SYSTEM - READY!');
+  console.log('✅ Restaurant POS SYSTEM - READY!');
   console.log('📍 Backend Server: http://localhost:' + PORT);
   console.log('🏠 Location: Karachi, Pakistan');
   console.log('👥 Tables Ready: ' + restaurantData.tables.length);

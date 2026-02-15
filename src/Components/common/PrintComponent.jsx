@@ -54,7 +54,7 @@ const PrintComponent = ({ type, orderData, onClose }) => {
           <div ref={contentRef} className="bg-white text-black p-6 rounded-lg max-w-md mx-auto">
             {/* Header */}
             <div className="text-center mb-4 border-b pb-4">
-              <h1 className="text-2xl font-bold">{settings.restaurantName || 'TERMIZ RESTAURANT'}</h1>
+              <h1 className="text-2xl font-bold">{settings.restaurantName || 'Restaurant'}</h1>
               <p className="text-gray-600">Fine Dining Experience</p>
               <p className="text-sm text-gray-500">{settings.address || 'Karachi, Pakistan'}</p>
               <p className="text-sm text-gray-500">Phone: {settings.phone || '+92 300 1234567'}</p>

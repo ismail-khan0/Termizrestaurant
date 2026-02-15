@@ -45,7 +45,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen w-full bg-[#111] text-white p-3 pb-24 compact">
-      <Header title="Termiz Restaurant" />
+      <Header title="Restaurant" />
       
       {/* Search and Filter Bar */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3 mb-4">

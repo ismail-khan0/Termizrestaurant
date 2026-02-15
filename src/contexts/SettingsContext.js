@@ -13,7 +13,7 @@ export const useSettings = () => {
 
 export const SettingsProvider = ({ children }) => {
   const [settings, setSettings] = useState({
-    restaurantName: 'Termiz Restaurant',
+    restaurantName: 'Restaurant',
     taxRate: 5.25,
     currency: 'PKR',
     address: '123 Food Street, Karachi, Pakistan',

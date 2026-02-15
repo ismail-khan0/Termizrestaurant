@@ -6,7 +6,7 @@ const isDev = require('electron-is-dev');
 let mainWindow;
 
 function createWindow() {
-  console.log('🚀 Starting Termiz Restaurant POS...');
+  console.log('🚀 Starting Restaurant POS...');
   console.log('Development mode:', isDev);
   
   // Create the browser window
@@ -24,7 +24,7 @@ function createWindow() {
     },
     show: false,
     icon: path.join(__dirname, '../../public/icon.png'),
-    title: 'Termiz Restaurant POS',
+    title: 'Restaurant POS',
     backgroundColor: '#111111',
     titleBarStyle: 'default'
   });
