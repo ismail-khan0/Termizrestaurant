@@ -120,7 +120,7 @@ class LocalDatabase {
         }
       ],
       settings: {
-        restaurantName: 'Termiz Restaurant',
+        restaurantName: 'Restaurant',
         taxRate: 5.25,
         currency: 'PKR',
         address: '123 Food Street, Karachi, Pakistan',
@@ -568,7 +568,7 @@ export const api = {
     } catch (error) {
       console.error('Error in getSettings:', error);
       return mockApiCall({
-        restaurantName: 'Termiz Restaurant',
+        restaurantName: 'Restaurant',
         taxRate: 5.25,
         currency: 'PKR',
         address: '123 Food Street, Karachi, Pakistan',
